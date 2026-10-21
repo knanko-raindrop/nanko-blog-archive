@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>共分散構造分析（構造式モデリング）について | 南光一樹｜ブログアーカイブ</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ</a>
+  <header class="site-header"><div class="container"><a class="site-title" href="../index.html">南光一樹｜ブログアーカイブ</a><span class="site-period">2010–2021</span></div></header>
+  <main id="main" class="container">
+    <a class="back-link" href="../index.html#year-2013">← 記事一覧へ戻る</a>
+    <article>
+      <header class="article-header"><h1>共分散構造分析（構造式モデリング）について</h1><div class="metadata"><time datetime="2013-06-12T09:39:00">2013年06月12日 09:39:00</time><span class="category">勉強：統計</span></div></header>
+      <p class="historical-notice">記事は投稿当時の情報を保存したものです。現在の情報とは異なる可能性があります。</p>
+      <div class="article-body"><p>専用ソフトが手元に無かったので，Rの &#x27;sem&#x27; パッケージを用いて挑戦してみた．
+主に参考にしたページは下記．
+</p><p>　- RでSEM（共分散構造分析/構造方程式モデリング） | きにきじ</p>
+
+<p>扱いたいデータにカテゴリカルなものが多数ある場合，semパッケージでは対応不能．
+ダミー変数を用いることで代替できるが，それにも限界がある模様．
+カテゴリカル変数が6つ，それぞれのアイテム数が最大で14個もあるので，
+ダミー変数処理をすると，その分だけspecify.model()を作る必要が出てきてしまい，
+modelが25KBを超えるものは処理できない，的なメッセージが出てしまった．</p>
+
+<p>専用ソフトのAmos，R-plus，LISRELなどを購入すれば解決できるのか．
+お試しバージョンが無料でダウンロードできるものの，使用できる変数の数に制限があるため
+本当に自分がやりたいことが解決されるのかわからないのが困りどころ．</p>
+
+<p>参考例が主に心理学分野のデータであり，
+数値にできないものを概念として入れ込んで因果関係を見つけ出すというスタンスが多い．
+自分が扱うデータはデータとして数値やアイテムが決まっており，それらの因果関係を知りたい．
+したがって参考例を元に自分のデータのためのモデルを作る過程が見えづらいのが難しいですね．</p>
+
+<p>##
+現状把握できたので，因果関係を見出す解析は後回し．
+とりあえずは，機械学習手法を用いて各変数の重要度を探ることにする．</p></div>
+    </article>
+    <nav class="article-nav" aria-label="前後の記事"><a href="20130508-051.html" rel="prev"><span>← 前の記事（古い）</span>予測モデルの作り方</a><a href="20130626-053.html" rel="next"><span>次の記事（新しい） →</span>オープンアクセスジャーナルの席巻</a></nav>
+    <a class="back-link" href="../index.html">記事一覧へ戻る</a>
+</main>
+  <footer class="site-footer container">南光一樹｜ブログアーカイブ · 2010–2021</footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+:root { color-scheme: light; --ink: #252b2a; --muted: #65716d; --line: #e3e8e5; --accent: #2b6353; }
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1.5rem; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; line-height: 1.8; -webkit-text-size-adjust: 100%; }
+a { color: var(--accent); text-underline-offset: .25em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+.container { width: min(100% - 3rem, 800px); margin-inline: auto; }
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.4rem; }
+.site-title { color: var(--ink); text-decoration: none; font-size: .95rem; font-weight: 600; }
+.site-period, .eyebrow { color: var(--muted); font-size: .75rem; letter-spacing: .12em; }
+.intro { padding-block: 4rem 2rem; }
+.eyebrow { margin: 0 0 .9rem; }
+h1 { margin: 0; font-size: clamp(1.65rem, 4.5vw, 2.3rem); line-height: 1.65; letter-spacing: .025em; overflow-wrap: anywhere; }
+.archive-notice { margin-top: 1.2rem; font-size: .95rem; }
+.historical-notice { padding: .8rem 1rem; border-left: 2px solid var(--line); color: var(--muted); font-size: .85rem; line-height: 1.9; margin-block: 1.2rem 2rem; }
+.intro-period { color: var(--muted); font-size: .85rem; }
+.year-nav { display: flex; flex-wrap: wrap; gap: .6rem; padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+.year-nav a { padding: .35rem .8rem; background: #f3f6f4; border-radius: 3px; font-size: .9rem; text-decoration: none; }
+.year-section { margin-block: 2.4rem 3.4rem; }
+h2 { display: flex; align-items: baseline; gap: 1rem; font-size: 1.6rem; font-weight: 500; margin-bottom: .6rem; }
+h2 small { color: var(--muted); font-size: .75rem; font-weight: 400; }
+.article-list { list-style: none; margin: 0; padding: 0; }
+.article-list li { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: .75rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.article-list time { color: var(--muted); font-size: .85rem; padding-top: .15rem; font-variant-numeric: tabular-nums; }
+.article-list a { color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+.article-list a:hover { color: var(--accent); text-decoration: underline; }
+.list-category { display: block; margin-top: .25rem; color: var(--muted); font-size: .75rem; }
+.back-link { display: inline-block; margin-block: 2rem; font-size: .85rem; }
+.article-header { margin-block: .7rem 2.6rem; padding-bottom: 1.8rem; border-bottom: 1px solid var(--line); }
+.metadata { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; color: var(--muted); font-size: .8rem; margin-top: 1.2rem; }
+.article-body { overflow-wrap: anywhere; font-size: 1rem; line-height: 2.05; letter-spacing: .025em; }
+.article-body p { white-space: pre-wrap; margin: 0 0 1.4em; }
+.article-body .source-list { list-style: none; margin: 0 0 1.4em; padding: 0 0 0 .75em; }
+.article-body .source-list li { white-space: pre-wrap; margin-block: .35em; padding-left: 1em; text-indent: -1em; }
+.article-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.article-nav a { font-size: .9rem; overflow-wrap: anywhere; }
+.article-nav span { display: block; font-size: .75rem; color: var(--muted); margin-bottom: .6rem; }
+.site-footer { margin-top: 4rem; padding-block: 1.7rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; padding: .5rem 1rem; background: #fff; z-index: 1; }
+.skip-link:focus { top: .5rem; }
+@media (max-width: 540px) {
+  .container { width: calc(100% - 2.25rem); }
+  .site-header .container { padding-block: 1rem; }
+  .site-period { font-size: .65rem; }
+  .site-title { font-size: .85rem; }
+  .intro { padding-top: 2.5rem; }
+  .article-list li { grid-template-columns: 3rem minmax(0, 1fr); gap: .5rem; }
+  .article-nav { grid-template-columns: 1fr; }
+  .article-body { line-height: 2; }
+}
+@media print { .year-nav, .back-link, .article-nav, .skip-link { display: none; } .container { width: 100%; } a { color: inherit; } }

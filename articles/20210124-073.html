@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文献管理（MendeleyからZoteroへの移行, iPadの連携） | 南光一樹｜ブログアーカイブ</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ</a>
+  <header class="site-header"><div class="container"><a class="site-title" href="../index.html">南光一樹｜ブログアーカイブ</a><span class="site-period">2010–2021</span></div></header>
+  <main id="main" class="container">
+    <a class="back-link" href="../index.html#year-2021">← 記事一覧へ戻る</a>
+    <article>
+      <header class="article-header"><h1>文献管理（MendeleyからZoteroへの移行, iPadの連携）</h1><div class="metadata"><time datetime="2021-01-24T10:53:00">2021年01月24日 10:53:00</time><span class="category">便利ツール・手法</span></div></header>
+      <p class="historical-notice">記事は投稿当時の情報を保存したものです。現在の情報とは異なる可能性があります。</p>
+      <div class="article-body"><p>文献管理にMendeleyを使っていたのだが、
+</p><ul class="source-list"><li>　・体感的に動きがもっさり</li>
+<li>　・Journal名やタグ等をつけるときに自動補完の感度が良すぎる</li>
+</ul><p>が気に食わなくて、小さなストレスが溜まっていた。</p>
+
+<p>そこで、別の文献整理ソフトのZoteroに変更してみた。
+ついでにiPadでも文献読みを円滑にできるように整備した。</p>
+
+<p>長いので格納。</p>
+
+
+<p>---
+PCはWindows 10。</p>
+
+<p>■使用アプリ等
+</p><ul class="source-list"><li>・Dropbox（文献pdfの格納）</li>
+<li>・PC：Zotero（文献管理ソフト）</li>
+<li>・PC：Zotfile（Zoteroのプラグイン）</li>
+<li>・iPad：PDF Expert（PDF編集・閲覧）</li>
+<li>・iPad：Goodnote 5（ノートアプリ。手書きメモを作る）</li></ul>
+
+<p>■手順
+＜A. PCの準備＞
+1) Dropboxに、『文献保管メインフォルダ』、『iPadで読む文献の一時保管フォルダ』を準備
+　仮に、「***¥Dropbox¥Zotero¥pdf」と「***¥Dropbox¥Zotero¥iPad」</p>
+　
+<p>2) PCへのZoteroのインストール
+　インストール後の初期設定はここを参考。ついでに、Webブラウザから文献情報を追加するためのConnectorも一緒にダウンロード。</p>
+　
+<p>3) Zotfileのインストール
+　Zotfile公式サイトからダウンロード。Zoteroのメニューバー「ツール &gt; アドオン	&gt; 歯車アイコン &gt; Install Add-on From File」から、ダウンロードしたxpiファイルを選ぶ。</p>
+
+<p>4) Zotfileの各種設定
+　Zotfileの各種設定は、メニューバー「ツール &gt; Zotfile Preferences」から行う。
+　General Settingで、文献管理に入れ込みたいpdfが入っているフォルダと、『文献保管用メインフォルダ』を設定。
+　Tablet Settingで、『iPadで読む文献の一時保管フォルダ』を設定し、Additional optionsで3つのラジオボタンをON。注釈を付けた文献の末尾に「_[A]」が入るようにした。
+　Renaming Rulesで、文献のファイル名のルールを決められる。「著者名（3名まではカンマつなぎ）- 年 - タイトル」とした。</p>
+
+<p>--
+＜B. PCでのMendeleyからの移行＞
+1) 使用してたMendeleyデータのエクスポート
+　最初エクスポートがうまく行かず、原因はバージョンが (1.19) 以上だったことらしい。ここ を参考にダウングレードし、無事にエクスポート。</p>
+　
+<p>2) ZoteroへのMendeleyデータのインポート
+　メニューバー「ファイル &gt; インポート &gt; Mendeley」。</p>
+
+<p>--
+＜C. iPadの事前準備＞
+1) Goodnote 5、PDF Expertのインストール。PDF Expertで、DropboxとGoodnoteとの連携
+2) Goodnote内に「Paper Note」というノートを作っておく。</p>
+
+<p>--
+＜D. 論文をiPadで読む＞
+1) PCのZoteroで、iPadで読みたい文献を送る。
+　読む文献を、右クリックメニュー「Manage Attachments &gt; Send to Tablet」。Zotero内の「Tablet Files」というコレクションに文献が追加され、『iPadで読む文献の一時保管フォルダ』にpdfがコピーされる。</p>
+
+<p>2) iPadで、送られた文献pdfを読む。
+　PDF Expertにて、『iPadで読む文献の一時保管フォルダ』に送られてきたpdfが入っているので、開いて読む。</p>
+
+<p>3) iPadで、手書きメモを書き、PDFに入れ込む。
+　Goodnoteで「Paper Note」を開き、書き込む。
+　論文を読み終えたら、共有メニュー（四角と上矢印）アイコンから「すべてを書き出す &gt; PDF &gt; PDF Expertにコピー」
+　PDF Expertで、読んでいる文献の画面で全ページを並べて表示してから、「挿入 &gt; 他のファイル &gt; Paper Note（さっき書き出した手書きのPDF）」、論文の1,2ページの間や一番うしろに挿入する。</p>
+
+<p>4) PCのZoteroで、iPadで読んだpdfの結合。
+　iPadで読んだpdfに何かしらの更新があった場合、「Tablet Files (modified）」にその文献がリストされる。右クリックメニュー「Manage Attachments &gt; Get from Tablet」で、タブレット用一時フォルダから、メインフォルダに該当pdfが移動し、その文献情報に、修正されたPDFが紐付けされる。
+　ここらへんの仕組みは、ここがシンプルでわかりやすかった。英語読めるなら、ここが実用的。</p>
+
+<p>--
+＜E. 文章翻訳を簡易にしたい場合＞
+1) 事前に、DeepL のショートカット作成
+　文章の日本語翻訳用に、DeepL のショートカットを作る。ここを参考。作ったショートカットは、「長押し &gt; ホーム画面に追加」でホーム画面に追加し、ドック（下の固定されたところ）に入れておく。</p>
+
+<p>2) 文章の翻訳
+　PDF Expertなどで翻訳したい英文を選択し、コピー。画面下からスワイプでドックを出し、登録したDeepL翻訳のショートカットをタップ。</p>
+
+<p>--
+■参考
+</p><ul class="source-list"><li>・Zotero | Your personal research assistant</li>
+<li>・ZotFile - Advanced PDF management for Zotero</li>
+<li>・文献管理ソフト Zoteroのすゝめ｜SD｜note</li>
+<li>・[メモ] Mendeley: Exodus ~Mendeley から Zotero への移行の手引き~ - ill-identified diary</li>
+<li>・zotfileすごいね：タブレットで論文・pdf資料を管理 - パーク・ 大久後の結構いいブログ</li>
+<li>・PhD notetaking workflow – PDF to Zotero to Zotfile to Dropbox to GoodNotes to Zotero to Scrivener. Blogjune 2019/7 – Librarian Smatter</li>
+<li>・高精度機械翻訳「DeepL」を使いやすくするiOS用ショートカット「DeepL翻訳」</li></ul></div>
+    </article>
+    <nav class="article-nav" aria-label="前後の記事"><a href="20200827-072.html" rel="prev"><span>← 前の記事（古い）</span>matplotlibのまとめ</a><a href="20210202-074.html" rel="next"><span>次の記事（新しい） →</span>超音波風速計のシリアル出力をArduinoでロギングできるか</a></nav>
+    <a class="back-link" href="../index.html">記事一覧へ戻る</a>
+</main>
+  <footer class="site-footer container">南光一樹｜ブログアーカイブ · 2010–2021</footer>
+</body>
+</html>

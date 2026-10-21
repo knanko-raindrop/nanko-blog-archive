@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>超音波風速計のシリアル出力をArduinoでロギングできるか | 南光一樹｜ブログアーカイブ</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ</a>
+  <header class="site-header"><div class="container"><a class="site-title" href="../index.html">南光一樹｜ブログアーカイブ</a><span class="site-period">2010–2021</span></div></header>
+  <main id="main" class="container">
+    <a class="back-link" href="../index.html#year-2021">← 記事一覧へ戻る</a>
+    <article>
+      <header class="article-header"><h1>超音波風速計のシリアル出力をArduinoでロギングできるか</h1><div class="metadata"><time datetime="2021-02-02T21:14:39">2021年02月02日 21:14:39</time><span class="category">勉強：測器開発</span></div></header>
+      <p class="historical-notice">記事は投稿当時の情報を保存したものです。現在の情報とは異なる可能性があります。</p>
+      <div class="article-body"><p>業者に依頼して、Gill社のWindMasterのシリアル出力データをRaspberry Piでロギングするシステムを構築してもらっている。ラズパイよりもArduinoの方を好んで使っているので、Arduinoでもロギングできないものかといろいろ試してみた。</p>
+
+<p>うまくいかなかった。シリアル通信できているように見えるのだが、serialRead()で出力される値がASCIIコードになってない。</p>
+
+<p>RS232Cは±12V、Arduinoは+5Vと信号の電圧が違うのがいけないみたい（参考：RS232C をUARTに変換し、Arduino で送受 - Qiita）。</p>
+
+<p>レベル変換基盤（参考：３Ｖ・３．３Ｖ・５Ｖ系－ＲＳ２３２レベル変換基板: 半導体 秋月電子通商-電子部品・ネット通販）で変換できるようだ。</p></div>
+    </article>
+    <nav class="article-nav" aria-label="前後の記事"><a href="20210124-073.html" rel="prev"><span>← 前の記事（古い）</span>文献管理（MendeleyからZoteroへの移行, iPadの連携）</a></nav>
+    <a class="back-link" href="../index.html">記事一覧へ戻る</a>
+</main>
+  <footer class="site-footer container">南光一樹｜ブログアーカイブ · 2010–2021</footer>
+</body>
+</html>

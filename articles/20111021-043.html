@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>測地系 | 南光一樹｜ブログアーカイブ</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ</a>
+  <header class="site-header"><div class="container"><a class="site-title" href="../index.html">南光一樹｜ブログアーカイブ</a><span class="site-period">2010–2021</span></div></header>
+  <main id="main" class="container">
+    <a class="back-link" href="../index.html#year-2011">← 記事一覧へ戻る</a>
+    <article>
+      <header class="article-header"><h1>測地系</h1><div class="metadata"><time datetime="2011-10-21T11:32:00">2011年10月21日 11:32:00</time><span class="category">勉強：GIS</span></div></header>
+      <p class="historical-notice">記事は投稿当時の情報を保存したものです。現在の情報とは異なる可能性があります。</p>
+      <div class="article-body"><p>GISのお勉強．自分用に得た知識の書き留め．</p>
+
+<p>・緯度経度は測地系が異なると同じ場所でも数値が異なる．知らなかった．</p>
+
+<ul class="source-list"><li>・日本測地系と世界測地系の2種類がある．昔は日本独自の測地系である日本測地系を使っていたが，現在は世界測地系に移行しつつある．</li>
+<li>・日本測地系：Tokyo　　世界測地系：WGS, JGD（陸域に限り一緒）</li></ul>
+
+<ul class="source-list"><li>・地域メッシュ：緯度経度を基準として日本をメッシュ状に区切る．</li>
+<li>　・一次メッシュ：数字4桁．上2桁＝緯度×1.5，下2桁＝経度-100</li>
+<li>　・二次メッシュ：+数字2桁．一次メッシュを縦横8等分．南西ほど数字が若く0-7．上1桁が緯度方向，下1桁が経度方向．</li>
+<li>　・三次メッシュ：+数字2桁．1辺約1km．二次メッシュを縦横10等分．南西ほど数字が若く0-9．上1桁が緯度方向，下1桁が経度方向．</li>
+<li>　・1/2地域メッシュ：+数字1桁．三次メッシュを縦横2等分．南西1，南東2，北西3，北東4．</li></ul>
+
+<p>・緯度経度の表記法変換（度のみ ⇔ 度分秒），測地系の変換（世界測地系 ⇔ 日本測地系），メッシュコードの変換（メッシュ ⇔ 度表記）などはエクセルで組める．測地系変換は厳密さを求めるならエクセルだけだと厳しいが5m程度の誤差を許すならばエクセルで良い．</p>
+
+<p>・測地系変換（誤差5m）（X：経度，Y：緯度，j：日本，w：世界）
+</p><p>日本→世界
+　Xw = Xj - 0.000046038*Yj - 0.000083043*Xj + 0.01004
+　Yw = Yj - 0.00010695*Yj + 0.000017464*Xj + 0.0046017
+世界→日本
+　Xj = Xw + 0.000046047*Yw + 0.000083049*Xw - 0.010041
+　Yj = Yw + 0.00010696*Yw - 0.000017467*Xw - 0.004602</p>
+
+<ul class="source-list"><li>・『メッシュ気候値2000』のメッシュは日本測地系に対応</li>
+<li>・Google Mapは世界測地系．</li></ul></div>
+    </article>
+    <nav class="article-nav" aria-label="前後の記事"><a href="20110916-042.html" rel="prev"><span>← 前の記事（古い）</span>ぼくらがみんな、誰かに教えてもらいたかったなあと思っていること</a><a href="20120207-044.html" rel="next"><span>次の記事（新しい） →</span>メッシュを自分で作成する</a></nav>
+    <a class="back-link" href="../index.html">記事一覧へ戻る</a>
+</main>
+  <footer class="site-footer container">南光一樹｜ブログアーカイブ · 2010–2021</footer>
+</body>
+</html>

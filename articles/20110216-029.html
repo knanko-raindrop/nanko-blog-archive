@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>エクセルと R のデータフレーム構造 | 南光一樹｜ブログアーカイブ</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ</a>
+  <header class="site-header"><div class="container"><a class="site-title" href="../index.html">南光一樹｜ブログアーカイブ</a><span class="site-period">2010–2021</span></div></header>
+  <main id="main" class="container">
+    <a class="back-link" href="../index.html#year-2011">← 記事一覧へ戻る</a>
+    <article>
+      <header class="article-header"><h1>エクセルと R のデータフレーム構造</h1><div class="metadata"><time datetime="2011-02-16T13:51:46">2011年02月16日 13:51:46</time><span class="category">勉強：R</span></div></header>
+      <p class="historical-notice">記事は投稿当時の情報を保存したものです。現在の情報とは異なる可能性があります。</p>
+      <div class="article-body"><p>今更と言われれば今更なんですが，R で統計処理やると抜群に早いのね．すごい．R で基礎的な統計処理をさせることができるようになりました（分散分析・多重比較くらいまで）．下記の青木先生のリンク先には大変お世話になっております．
+</p><p>　- R による統計処理</p>
+
+<p>今まで勉強しようと思っては挫折を繰り返してたんですが，今回はデータフレーム（データの集まった表みたいなもの）の作り方の違いに気付いたことで，急になじみ深くなりました．</p>
+
+<p>A・B・Cの3つの項目について比較する必要があるときに，エクセルで処理しようとするなら，
+－－－－－－－－－－－
+|　A　　B　　C
+|　a1　b1　c1
+|　a2　b2　c2
+|　a3　b3　c3
+|　…
+－－－－－－－－－－－
+と並列させます．見た目にわかりやすいし，グラフを作るときにも楽だからです．</p>
+
+<p>でも，R 用にデータフレームを作る場合は，
+－－－－－－－－－－－
+|　項目　データ
+|　A　a1
+|　A　a2
+|　A　a3
+|　…
+|　B　b1
+|　B　b2
+|　…
+|　C　c1
+|　C　c2
+|　…
+－－－－－－－－－－－
+みたいに，項目すらも表の中に埋め込んだ，縦長の表を作った方がよいということが分かりました．見た目にわかりやすくなくても，コマンドさえ打てばR のソフトが項目別に集計してくれる．項目を列方向に分けると，コマンドの使い方が逆に複雑になるという仕様．</p>
+
+<p>個人的には目から鱗．こういう「何かわからなかった事柄が，ストンと落ちたように理解できる」とソフトや概念が頭に定着するんですよね．また素敵な経験を1つ得ました．</p>
+
+<p>***
+データ処理を行う計算プログラミング全般に言えることだが，データの格納方法を理解して自分のものにするまでに時間がかかる気がする．私にとっては，配列の概念を理解することが最初の一歩なんだろう．</p></div>
+    </article>
+    <nav class="article-nav" aria-label="前後の記事"><a href="20110201-028.html" rel="prev"><span>← 前の記事（古い）</span>暖房が直ってた</a><a href="20110217-030.html" rel="next"><span>次の記事（新しい） →</span>検定で用いる手法の選択</a></nav>
+    <a class="back-link" href="../index.html">記事一覧へ戻る</a>
+</main>
+  <footer class="site-footer container">南光一樹｜ブログアーカイブ · 2010–2021</footer>
+</body>
+</html>
