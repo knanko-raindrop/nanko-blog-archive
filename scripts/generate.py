@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "jugem0.txt"
-SITE_TITLE = "南光一樹｜ブログアーカイブ"
+SITE_TITLE = "研究生活の雑記帳 2nd"
 HISTORICAL_NOTICE = "記事は投稿当時の情報を保存したものです。現在の情報とは異なる可能性があります。"
 URL = re.compile(r"https?://[^\s<>]+")
 
@@ -195,8 +195,8 @@ def generate() -> None:
         items = "".join(f'<li><time datetime="{a.date:%Y-%m-%d}">{a.date:%m.%d}</time><div><a href="articles/{a.filename}">{html.escape(a.title)}</a><span class="list-category">{html.escape(a.category)}</span></div></li>' for a in group)
         sections.append(f'<section class="year-section" id="year-{year}" aria-labelledby="heading-{year}"><h2 id="heading-{year}">{year}<small>{len(group)}記事</small></h2><ol class="article-list">{items}</ol></section>')
     content = f'''
-    <div class="intro"><p class="eyebrow">BLOG ARCHIVE / 74 ARTICLES</p><h1>過去のブログ記事</h1>
-    <p class="archive-notice">2010～2021年の個人ブログ記事を保存したアーカイブです。更新は終了しています。</p>
+    <div class="intro"><p class="eyebrow">BLOG ARCHIVE / 74 ARTICLES</p><h1>南光一樹のブログアーカイブ（2010–2021）</h1>
+    <p class="archive-notice">旧JUGEMブログ「{SITE_TITLE}」の記事を保存したアーカイブです。ブログの更新は終了しています。</p>
     <p class="historical-notice">{HISTORICAL_NOTICE}</p>
     <p class="intro-period">2010年9月17日 — 2021年2月2日 · 全74記事</p></div>
     <nav class="year-nav" aria-label="年別の記事一覧">{year_nav}</nav>

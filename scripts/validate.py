@@ -27,7 +27,9 @@ class Document(HTMLParser):
         self.rel_links = {}
         self.body_links = []
         self.site_titles = []
+        self.site_footers = []
         self.page_title = []
+        self.archive_notices = []
         self.notices = []
         self.paragraphs = 0
         self.lists = 0
@@ -71,6 +73,10 @@ class Document(HTMLParser):
             self.page_title.append(data)
         if any(a.get("class") == "site-title" for _, a in self.stack):
             self.site_titles.append(data)
+        if any(t == "footer" for t, _ in self.stack):
+            self.site_footers.append(data)
+        if any(a.get("class") == "archive-notice" for _, a in self.stack):
+            self.archive_notices.append(data)
         if any(a.get("class") == "historical-notice" for _, a in self.stack):
             self.notices.append(data)
         if any(t == "h1" for t, _ in self.stack):
@@ -95,8 +101,8 @@ def validate() -> None:
         document = Document(text)
         assert not document.stack, f"Unclosed HTML in {path}"
         assert not document.forbidden, f"Unexpected image or active content in {path}"
-        assert "".join(document.site_titles) == "南光一樹｜ブログアーカイブ", path
-        assert "".join(document.page_title).endswith("南光一樹｜ブログアーカイブ"), path
+        assert "".join(document.site_titles) == "研究生活の雑記帳 2nd", path
+        assert "".join(document.site_footers) == "研究生活の雑記帳 2nd · 2010–2021", path
         assert "".join(document.notices) == "記事は投稿当時の情報を保存したものです。現在の情報とは異なる可能性があります。", path
         documents[path.resolve()] = document
     assert len(documents) == 75, "Expected index plus 74 articles"
@@ -110,6 +116,7 @@ def validate() -> None:
         filename = f"{date:%Y%m%d}-{number:03d}.html"
         document = documents[(ROOT / "articles" / filename).resolve()]
         assert "".join(document.h1) == html.unescape(title), f"Title mismatch: {filename}"
+        assert "".join(document.page_title) == f"{html.unescape(title)} | 研究生活の雑記帳 2nd", f"Browser title mismatch: {filename}"
         assert document.times == [date.isoformat()], f"Date mismatch: {filename}"
         assert "".join(document.category) == html.unescape(category), f"Category mismatch: {filename}"
         expected_body = html.unescape(body.strip("\n"))
@@ -121,6 +128,10 @@ def validate() -> None:
         counts[date.year] += 1
     expected.sort()
     index = documents[(ROOT / "index.html").resolve()]
+    assert "".join(index.page_title) == "研究生活の雑記帳 2nd", "Index browser title mismatch"
+    assert "".join(index.h1) == "南光一樹のブログアーカイブ（2010–2021）", "Archive heading mismatch"
+    assert "".join(index.archive_notices) == "旧JUGEMブログ「研究生活の雑記帳 2nd」の記事を保存したアーカイブです。ブログの更新は終了しています。", "Archive notice mismatch"
+    assert (ROOT / ".nojekyll").is_file(), "Missing GitHub Pages .nojekyll file"
     assert index.article_links == [f"articles/{name}" for _, _, name in reversed(expected)], "Index order or article coverage mismatch"
     for year in counts:
         assert f"year-{year}" in index.ids, "Missing year navigation target"
